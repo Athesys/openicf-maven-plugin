@@ -28,9 +28,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.forgerock.openicf.connectors</groupId>
-        <artifactId>connectors-parent</artifactId>
+	<parent>
+        <groupId>org.forgerock.openicf.framework</groupId>
+        <artifactId>framework</artifactId>
         <version>@frameworkVersion@</version>
     </parent>
     <groupId>org.forgerock.openicf.connectors</groupId>
@@ -51,10 +51,12 @@
         <framework.releaseVersion>@framework.releaseVersion@</framework.releaseVersion>
         <projectVersion>@frameworkVersion@</projectVersion>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.forgerock.openicf.framework</groupId>
             <artifactId>connector-framework</artifactId>
+            <version>@frameworkVersion@</version>
         </dependency>
 
         <!-- Test Dependencies >
@@ -220,6 +222,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
             </plugin>
             <plugin>
                 <groupId>org.forgerock.maven.plugins</groupId>
